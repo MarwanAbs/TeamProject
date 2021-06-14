@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>Social perception experiment</title>
+    <style>
+
+      h1,#zero,#intro,#intro2,#intro3,#intro4{
+      text-align:right;
+      font-size: x-large;
+      }
+
+      body{
+      background-color: #b3d9ff;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>הניסוי הושלם. תודה על השתתפותך!</h1>
+    <p id='intro'>מנשמח לענות על כל שאלה או הערה, בכל זמן שתתעורר, בכתובת המייל הבאה:. </p>
+    <p id='intro2'> marwanab@campus.technion.ac.il </p>
+    <p id='intro3'>המשך יום טוב. </p>
+  </body>
+</html>
+
+    {% next_button %}
+{% endblock %}
+

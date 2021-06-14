@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>Social perception experiment</title>
+    <style>
+
+      h1,#zero,#intro,#intro2,#intro3,#intro4{
+      text-align:right;
+      font-size: x-large;
+      }
+
+      body{
+      background-color: #b3d9ff;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>ברוכים הבאים</h1>
+    <p id="zero"> this is an example, can and should be modifed</p>
+    <p id='intro'>בניסוי הבא אתה הולך להשתתף בניסוי שמתעסק עם תפיסה חברתית. הניסוי יקח בערך כ10 -15 דקות. </p>
+    <p id='intro2'>השתתפותך היא על בסיס התנדבות, לכן בכל רגע שאתה רוצה לסיים את השתתפותך אתה רשאי לכך.</p>
+    <p id='intro3'>במידה ויש שאלות או רצון לצור קשר עם הצוות האחראי להלן כתובת המייל: marwanab@campus.technion.ac.il </p>
+    <p id='intro4'>תודה רבה. </p>
+  </body>
+</html>
+
+    {% next_button %}
+{% endblock %}
+

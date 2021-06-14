@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<html lang="en" dir="rtl">
+  <head>
+      <meta charset="UTF-8">
+      <script type="text/javascript" src="{% static 'main3.js' %}"></script>
+      <link rel="stylesheet"  href="{% static 'style.css' %}">
+  </head>
+  <body>
+  <p>רוב התיאוריות המודרניות של קבלת החלטות מכירות בעובדה שהחלטות אינן מתקבלות בווקום. העדפות אינדיבידואליות וידע אישי, יחד עם משתנים מצביים, יכולים להשפיע רבות על תהליך ההחלטה. על מנת להקל על המחקר שלנו בנושא קבלת החלטות, אנו מעוניינים לבדוק האם לקחת זמן לקרוא את ההוראות. לכן, במקום לענות במדויק על השאלה הבאה, סמן רק "סוריה" ו"אף אחת מהנזכרות לעיל" ואז המשך. זה יוכיח לנו שאכן קראת את ההוראות.
+איזו מהמדינות הבאות שמעת שהוזכרו בחדשות בשבוע האחרון?
+(בבקשה סמן את כל המדינות הרלוונטיות) 
+צרפת, גרמניה, שוויץ, סוריה, איראן, קנדה, מקסיקו, אף אחת מהנזכרות לעיל</p>
+
+  <p>
+  <input type="radio" name="france" value="france">france
+  <input type="radio" name="germany" value="germany"> germany
+  <input type="radio" name="Siwtzerland" value="Siwtzerland">Siwtzerland
+  <input type="radio" name="iran" value="iran">iran
+  <input type="radio" name="canada" value="canada">canada
+  <input type="radio" name="other" value="other">other
+  </p>
+  <br>
+  <button onclick="imcquestion()" type="button">לאישור הגשה, לחץ על הכפתור הזה וסמן את העיגול שיופיע תכף</button>
+  <p id="result" hidden></p>
+  <input type="hidden" name="imc_scenario" id="imc_scenario"/>
+  <script>
+      function imcquestion()
+        {
+            var answer = document.getElementsByTagName('input');
+            for(i = 0; i < 6; i++)
+            {
+                if(answer[i].type="radio")
+                {
+                    if(answer[i].checked)
+                        answers+=answer[i].value;
+                }
+            }
+           document.getElementById("result").innerHTML= answers;
+           document.getElementById("imc_scenario").value= answers;
+        }
+  </script>
+</body>
+</html>
+
+{% next_button %}
+{% endblock %}
+

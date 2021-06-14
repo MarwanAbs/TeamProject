@@ -1,0 +1,105 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+<html lang="en" dir="rtl">
+
+<head>
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+    <script type="text/javascript" src="{% static 'main3.js' %}"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body onload="init()">
+    <p class="scenario">
+        תרחיש
+    </p>
+
+    <p class="answer">50%</p>
+    <p class="error-msg hide">נא להקיש אישור על מנת לאשר את בחירתך</p>
+    <p class="run1" hidden>{{ player.condition }}</p>
+    <p id="checktest"hidden></p>
+    <p id="checktest1"hidden></p>
+    <p id="list1"hidden></p>
+    <p id="list"hidden></p>
+    <p id ='list2'hidden></p>
+    0%<input oninput="updateAnswer(this)" class="answer-input" type="range" min="0" max="100" step="10">100%
+    <br><br>
+    <button onclick="saveAnswer()" type="button">אישור</button>
+
+    <p>מהי רמת הביטחון</p>
+    <div>
+        <ul class="radio-list">
+            <li>
+                <input id="1" type="radio" name="answer" value="1">
+                <label for="1">1</label>
+            </li>
+            <li>
+                <input id="2" type="radio" name="answer" value="2">
+                <label for="2">2</label>
+            </li>
+            <li>
+                <input id="3" type="radio" name="answer" value="3">
+                <label for="3">3</label>
+            </li>
+            <li>
+                <input id="4" type="radio" name="answer" value="4">
+                <label for="4">4</label>
+            </li>
+            <li>
+                <input id="5" type="radio" name="answer" value="5">
+                <label for="5">5</label>
+            </li>
+            <li>
+                <input id="6" type="radio" name="answer" value="6">
+                <label for="6">6</label>
+            </li>
+            <li>
+                <input id="7" type="radio" name="answer" value="7">
+                <label for="7">7</label>
+            </li>
+        </ul>
+    </div>
+
+    <br>
+    <button onclick="nextQuest()" type="button">המשך לשאלה הבאה</button>
+
+<input type="hidden" name="Scenario_text1" id="Scenario_text1"/>
+<input type="hidden" name="Scenario_text2" id="Scenario_text2"/>
+<input type="hidden" name="Scenario_text3" id="Scenario_text3"/>
+<input type="hidden" name="Scenario_text4" id="Scenario_text4"/>
+<input type="hidden" name="Scenario_text5" id="Scenario_text5"/>
+<input type="hidden" name="Scenario_text6" id="Scenario_text6"/>
+
+<input type="hidden" name="like_rating1" id="like_rating1"/>
+<input type="hidden" name="like_rating2" id="like_rating2"/>
+<input type="hidden" name="like_rating3" id="like_rating3"/>
+<input type="hidden" name="like_rating4" id="like_rating4"/>
+<input type="hidden" name="like_rating5" id="like_rating5"/>
+<input type="hidden" name="like_rating6" id="like_rating6"/>
+
+<input type="hidden" name="RT1" id="RT1"/>
+<input type="hidden" name="RT2" id="RT2"/>
+<input type="hidden" name="RT3" id="RT3"/>
+<input type="hidden" name="RT4" id="RT4"/>
+<input type="hidden" name="RT5" id="RT5"/>
+<input type="hidden" name="RT6" id="RT6"/>
+
+<input type="hidden" name="conf_rating1" id="conf_rating1"/>
+<input type="hidden" name="conf_rating2" id="conf_rating2"/>
+<input type="hidden" name="conf_rating3" id="conf_rating3"/>
+<input type="hidden" name="conf_rating4" id="conf_rating4"/>
+<input type="hidden" name="conf_rating5" id="conf_rating5"/>
+<input type="hidden" name="conf_rating6" id="conf_rating6"/>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+
+{% next_button %}
+{% endblock %}
+

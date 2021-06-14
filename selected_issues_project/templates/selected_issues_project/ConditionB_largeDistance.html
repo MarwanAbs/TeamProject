@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>Social perception experiment</title>
+
+    <style>
+
+      h1,#zero,#intro,#intro1{
+      text-align:right;
+      font-size: x-large;
+      }
+
+      body{
+      background-color: #b3d9ff;
+      }
+      #zero {font-weight: bold}
+
+    </style>
+
+  </head>
+  <body>
+    <h1>אנא קרא את ההוראות הבאים: </h1><br>
+    <p id="zero"> חברך יוסי גר בסינגפור ואינו מחוסן לקורונה.</p>
+    <p id='intro'> אנא קרא/י בתשומת לב כל משפט והעריכ/י את הסיכוי למקרה הנתון לאחר כל תרחיש בין 0%(סיכוי) ל- 100%(סיכוי)</p>
+    <p id = 'intro1'>לאחר מכן הינך מתבקש/ת לדרג את רמת הביטחון שאת/ה חש/ה בתשובתך על סקאלה שבין 1 (ניחוש) ל-7 (בטחון מלא).</p>
+  </body>
+</html>
+
+    {% next_button %}
+{% endblock %}
+
