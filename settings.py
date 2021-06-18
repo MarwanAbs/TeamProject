@@ -1,39 +1,13 @@
 from os import environ
 
-#every dict contains an experiment.
 SESSION_CONFIGS = [
-    # dict(
-    #     name='public_goods',
-    #     display_name="Public Goods",
-    #     num_demo_participants=3,
-    #     app_sequence=['public_goods', 'payment_info'],
-    # ),
-    # dict(
-    #     name='guess_two_thirds',
-    #     display_name="Guess 2/3 of the Average",
-    #     num_demo_participants=3,
-    #     app_sequence=['guess_two_thirds', 'payment_info'],
-    # ),
-    # dict(
-    #     name='survey',
-    #     display_name='survey',
-    #     num_demo_participants=1,
-    #     app_sequence=['survey', 'payment_info'],
-    # ),
-    dict(name='selected_issues_project',
-        display_name='Social_perception',
-        num_demo_participants=10,
-        app_sequence=['selected_issues_project'],)
-    # ,
-    # {
-    #     'name': 'pythonClass',     #
-    #     'display_name': "pythonClass", #consent form for IGT study
-    #     'num_demo_participants': 10,
-    #     'app_sequence': ['pythonClass'],
-    # }
-    ]
-
-
+    dict(
+        name='selected_issues_project',
+        display_name='social_perception',
+        num_demo_participants=30,
+        app_sequence=['selected_issues_project'],
+        ),
+]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -52,24 +26,13 @@ LANGUAGE_CODE = 'en'
 REAL_WORLD_CURRENCY_CODE = 'USD'
 USE_POINTS = True
 
-ROOMS = [
-    dict(
-        name='econ101',
-        display_name='Econ 101 class',
-        participant_label_file='_rooms/econ101.txt',
-    ),
-    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
-]
-
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 
-DEMO_PAGE_INTRO_HTML = """
-Here are some oTree games.
-"""
+DEMO_PAGE_INTRO_HTML = """ """
 
+SECRET_KEY = 'km+=za#gypg)xu9+9mj2(5ty*k1e)^7(@%fehlrh^0xp!y5xtv'
 
-SECRET_KEY = 'eek7!3q#us1jk+)%4nr92l$s$fqe=5ho_h=ky1eyxem)c0v&zt'
-
+# if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
