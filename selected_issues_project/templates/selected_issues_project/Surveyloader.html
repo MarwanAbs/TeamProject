@@ -16,19 +16,20 @@
         תרחיש
     </p>
 
+    <p class="error-msg hide">אנא הקש אישור כדי לאשר את בחירתך</p>
     <p class="answer">50%</p>
-    <p class="error-msg hide">נא להקיש אישור על מנת לאשר את בחירתך</p>
     <p class="run1" hidden>{{ player.condition }}</p>
     <p id="checktest"hidden></p>
     <p id="checktest1"hidden></p>
     <p id="list1"hidden></p>
     <p id="list"hidden></p>
     <p id ='list2'hidden></p>
+    <p id="list_of_nums"hidden></p>
     0%<input oninput="updateAnswer(this)" class="answer-input" type="range" min="0" max="100" step="10">100%
     <br><br>
     <button onclick="saveAnswer()" type="button">אישור</button>
 
-    <p>מהי רמת הביטחון</p>
+    <p class="confidence-txt">מהי רמת הביטחון שאתה חש בתשובתך?</p>
     <div>
         <ul class="radio-list">
             <li>
@@ -72,6 +73,14 @@
 <input type="hidden" name="Scenario_text5" id="Scenario_text5"/>
 <input type="hidden" name="Scenario_text6" id="Scenario_text6"/>
 
+<input type="hidden" name="Scenario_num1" id="Scenario_num1"/>
+<input type="hidden" name="Scenario_num2" id="Scenario_num2"/>
+<input type="hidden" name="Scenario_num3" id="Scenario_num3"/>
+<input type="hidden" name="Scenario_num4" id="Scenario_num4"/>
+<input type="hidden" name="Scenario_num5" id="Scenario_num5"/>
+<input type="hidden" name="Scenario_num6" id="Scenario_num6"/>
+
+
 <input type="hidden" name="like_rating1" id="like_rating1"/>
 <input type="hidden" name="like_rating2" id="like_rating2"/>
 <input type="hidden" name="like_rating3" id="like_rating3"/>
@@ -92,14 +101,9 @@
 <input type="hidden" name="conf_rating4" id="conf_rating4"/>
 <input type="hidden" name="conf_rating5" id="conf_rating5"/>
 <input type="hidden" name="conf_rating6" id="conf_rating6"/>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br>
 </body>
 </html>
 
 {% next_button %}
 {% endblock %}
-

@@ -1,10 +1,9 @@
 'use strict';
 
 var ScenarioIndex = 0;
-var answers=null;
+ var answers=null;
 var Scenariotimestart = Date.now();
 var answers_list=[];
-var num_list=[];
 var text_list=[];
 var RT_list=[];
 var conf_rating=[];
@@ -14,85 +13,73 @@ var Scenarios = [
         txt: 'יוסי חברך יצא לקניות בסופר הקרוב לביתו שבתל אביב, בכניסה לסופר השומר מדד את החום שלו ונתן לו להיכנס. כאשר יוסי הגיע לבחור את הירקות עמד לידו גבר שבדיוק הוריד את המסכה, כשחזר יוסי הביתה הוא שכח לרחוץ את ידיו. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '1'
+        confidence: null
     },
     {
         txt: 'יוסי חברך השתתף במנגל עם חברים קרובים בראשון לציון ,חלקם אינם מחוסנים. אחד מחבריו הטובים שעבר את חיסונו הראשון בדיוק באותו יום וישב ליד יוסי השתעל . מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '2'
+        confidence: null
     },
     {
         txt: 'יוסי חברך עובד בחברת הייטק גדולה במרכז תל אביב שחזרה לשגרה מלאה הודות לתוכנית "בחזרה לשגרה", והשתתף בפגישה מרובת משתתפים כשבחברה הקפידו על תו סגול אך לא על התו ירוק. כמה מהמשתתפים לא חשו בטוב יום למחרת. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '3'
+        confidence: null
     },
     {
         txt: 'בעקבות פתיחת המסעדות יוסי חברך יצא לאכול במסעדה האהובה עליו בצפון. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '4'
+        confidence: null
     },
     {
         txt: 'הודות לפתיחת הקניונים יוסי חברך יצא לקנות בגדים בכיכר המדינה. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '5'
+        confidence: null
     },
     {
         txt: 'בעקבות פתיחת מגרשי הכדורסל יוסי חברך חזר לשחק בכדורסל השכונתי. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '6'
+        confidence: null
     },
     {
         txt: 'יוסי חברך יצא לקניות בסופר הקרוב לביתו בסינגפור, בכניסה לסופר השומר מדד את החום שלו ונתן לו להיכנס. כאשר יוסי הגיע לבחור את הירקות עמד לידו גבר שבדיוק הוריד את המסכה , כשחזר יוסי הביתה הוא שכח לרחוץ את ידיו. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '7'
+        confidence: null
     },
     {
         txt: 'יוסי חברך השתתף במנגל עם חברים קרובים  שגרים באי סנטוזה הסמוך לסינגפור וחלקם אינם מחוסנים, אחד מחבריו הטובים שעבר את חיסונו הראשון בדיוק באותו יום וישב ליד יוסי והשתעל . מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '8'
+        confidence: null
     },
     {
         txt: 'יוסי חברך עובד בחברת הייטק גדולה במרכז סינגפור שחזרה לשגרה מלאה הודות לתוכנית "בחזרה לשגרה", והשתתף בפגישה מרובת משתתפים כשבחברה הקפידו על תו סגול אך לא על התו ירוק. כמה מהמשתתפים לא חשו בטוב יום למחרת. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '9'
+        confidence: null
     },
     {
         txt: 'בעקבות פתיחת המסעדות יוסי חברך יצא לאכול במסעדה האהובה עליו במרכז סינגפור. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '10'
+        confidence: null
     },
     {
         txt: 'הודות לפתיחת הקניונים יוסי חברך יצא לקנות בגדים בקניון בלב העיר. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '11'
+        confidence: null
     },
     {
         txt: 'בעקבות פתיחת מגרשי הכדורסל  יוסי חברך חזר לשחק בכדורסל השכונתי. מה הסיכוי שלאחר שבוע חברך יוסי אובחן כחולה קורונה?',
         answer: null,
         duration: null,
-        confidence: null,
-        scen_num: '12'
+        confidence: null
     }
 ];
 
@@ -104,6 +91,7 @@ function init() {
     else Scenarios = shuffle(Scenarios.slice(6, 12));
     renderQuestion(Scenarios[ScenarioIndex]);
 }
+
 // 'updating the likelihood rating on the user screen';
 function updateAnswer(Input) {
     const Answer = document.querySelector('.answer');
@@ -119,7 +107,6 @@ function saveAnswer() {
     currQuest.answer = AnswerInput.value;
 
     text_list.push(currQuest.txt);
-
     document.getElementById("list1").innerHTML=text_list;
     document.getElementById('Scenario_text1').value=text_list[0];
     document.getElementById('Scenario_text2').value=text_list[1];
@@ -127,15 +114,6 @@ function saveAnswer() {
     document.getElementById('Scenario_text4').value=text_list[3];
     document.getElementById('Scenario_text5').value=text_list[4];
     document.getElementById('Scenario_text6').value=text_list[5];
-    
-    num_list.push(currQuest.scen_num)
-    document.getElementById("list_of_nums").innerHTML=num_list;
-    document.getElementById('Scenario_num1').value=num_list[0];
-    document.getElementById('Scenario_num2').value=num_list[1];
-    document.getElementById('Scenario_num3').value=num_list[2];
-    document.getElementById('Scenario_num4').value=num_list[3];
-    document.getElementById('Scenario_num5').value=num_list[4];
-    document.getElementById('Scenario_num6').value=num_list[5];
 
     answers_list.push(currQuest.answer);
     document.getElementById("list").innerHTML=answers_list;
@@ -205,7 +183,7 @@ function showErrorMsg() {
 }
 function showNextPage() {
     document.querySelector('.otree-btn-next').hidden = false
-    alert('סיימת שלב זה, נא לחץ על NEXT');
+    alert(conf_rating);
 }
 // Get an array and shuffle it
 function shuffle(items) {

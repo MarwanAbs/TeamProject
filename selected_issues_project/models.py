@@ -10,7 +10,7 @@ from otree.api import (
 )
 
 
-author = 'Mar_Ab, Bthn_Lnk, Stv_Ston, Rut '
+author = 'Mar_Ab, Bthn_Lnk, Stv_Ston, Rot '
 
 doc = """
 This app is built as an academic course requirement
@@ -35,10 +35,11 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     consent = models.StringField(choices=['מסכים', 'לא מסכים'])
     condition = models.StringField()
-    gender = models.StringField(choices=['זכר', 'נקבה'])  # optional is entring choices[]
-    age = models.IntegerField(min=18, max=30)  # optinal min/max values
-    residence = models.StringField(blank=True, max_length=12)  # optional - blank means requrired, max_length=
-    years_of_education = models.IntegerField(initial=3)
+    gender = models.StringField(choices=['זכר', 'נקבה', 'אחר'])  # optional is entring choices[]
+    age = models.IntegerField(min=18, max=33)  # optinal min/max values
+    residence = models.StringField(blank=True, max_length=15)  # optional - blank means requrired, max_length=
+    years_of_education = models.IntegerField(min=0, max=24)
+    TimeOuted = models.BooleanField(initial=False)
     Scenario_text1 = models.StringField()
     Scenario_text2 = models.StringField()
     Scenario_text3 = models.StringField()
@@ -64,7 +65,13 @@ class Player(BasePlayer):
     conf_rating4 = models.IntegerField()
     conf_rating5 = models.IntegerField()
     conf_rating6 = models.IntegerField()
-    TimeOuted = models.BooleanField(initial=False)
+
     imc_scenario = models.StringField()
+    Scenario_num1 = models.StringField()
+    Scenario_num2 = models.StringField()
+    Scenario_num3 = models.StringField()
+    Scenario_num4 = models.StringField()
+    Scenario_num5 = models.StringField()
+    Scenario_num6 = models.StringField()
 
 

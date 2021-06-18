@@ -11,30 +11,93 @@
       <meta charset="UTF-8">
       <script type="text/javascript" src="{% static 'main3.js' %}"></script>
       <link rel="stylesheet"  href="{% static 'style.css' %}">
+      <style>
+        .input-list{
+          list-style:none;
+          padding:0;
+          display:flex;
+          justify-content:space-between;
+          width:800px;
+        }
+        .input-list li{
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+        }
+        .imc-txt{
+          border:1px solid black;
+          border-radius:5px;
+          background-color:lightblue;
+          padding:15px;
+        }
+      </style>
   </head>
-  <body>
-  <p>רוב התיאוריות המודרניות של קבלת החלטות מכירות בעובדה שהחלטות אינן מתקבלות בווקום. העדפות אינדיבידואליות וידע אישי, יחד עם משתנים מצביים, יכולים להשפיע רבות על תהליך ההחלטה. על מנת להקל על המחקר שלנו בנושא קבלת החלטות, אנו מעוניינים לבדוק האם לקחת זמן לקרוא את ההוראות. לכן, במקום לענות במדויק על השאלה הבאה, סמן רק "סוריה" ו"אף אחת מהנזכרות לעיל" ואז המשך. זה יוכיח לנו שאכן קראת את ההוראות.
-איזו מהמדינות הבאות שמעת שהוזכרו בחדשות בשבוע האחרון?
-(בבקשה סמן את כל המדינות הרלוונטיות) 
-צרפת, גרמניה, שוויץ, סוריה, איראן, קנדה, מקסיקו, אף אחת מהנזכרות לעיל</p>
+  <body onload="hidenext()">
 
-  <p>
-  <input type="radio" name="france" value="france">france
-  <input type="radio" name="germany" value="germany"> germany
-  <input type="radio" name="Siwtzerland" value="Siwtzerland">Siwtzerland
-  <input type="radio" name="iran" value="iran">iran
-  <input type="radio" name="canada" value="canada">canada
-  <input type="radio" name="other" value="other">other
+  <p class="imc-txt">רוב התיאוריות המודרניות של קבלת החלטות מכירות בעובדה שהחלטות אינן מתקבלות בווקום. העדפות אינדיבידואליות וידע אישי, יחד עם משתנים מצביים, יכולים להשפיע רבות על תהליך ההחלטה. על מנת להקל על המחקר שלנו בנושא קבלת החלטות, אנו מעוניינים לבדוק האם קראת את ההוראות בקפידה. לכן, במקום לענות במדויק על השאלה הבאה, סמן רק "סוריה" ו"אף אחת מהנזכרות לעיל" ואז המשך. זה יוכיח לנו שאכן קראת את ההוראות.
   </p>
   <br>
-  <button onclick="imcquestion()" type="button">לאישור הגשה, לחץ על הכפתור הזה וסמן את העיגול שיופיע תכף</button>
+  <p>
+
+    איזו מהמדינות הבאות שמעת שהוזכרו בחדשות בשבוע האחרון?
+(בבקשה סמן את כל המדינות הרלוונטיות).
+
+  </p>
+<br>
+
+
+ <ul class="input-list">
+    <li>
+      <input type="radio" id="צרפת" name="צרפת" value="צרפת">
+      <label for="צרפת">צרפת</label>
+    </li>
+    <li>
+      <input type="radio" id="גרמניה" name="גרמניה" value="גרמניה">
+      <label for="גרמניה">גרמניה</label>
+    </li>
+     <li>
+      <input type="radio" id="שוויץ" name="שוויץ" value="שוויץ">
+      <label for="שוויץ">שוויץ</label>
+    </li>
+     <li>
+      <input type="radio" id="סוריה" name="סוריה" value="סוריה">
+      <label for="סוריה">סוריה</label>
+    </li>
+    <li>
+      <input type="radio" id="איראן" name="איראן" value="איראן">
+      <label for="איראן">איראן</label>
+    </li>
+    <li>
+      <input type="radio" id="קנדה" name="קנדה" value="קנדה">
+      <label for="קנדה">קנדה</label>
+    </li>
+     <li>
+      <input type="radio" id="מקסיקו" name="מקסיקו" value="מקסיקו">
+      <label for="מקסיקו">מקסיקו</label>
+    </li>
+    <li>
+      <input type="radio" id="אף אחת מהנזכרות לעיל" name="אף אחת מהנזכרות לעיל" value="אף אחת מהנזכרות לעיל">
+      <label for="אף אחת מהנזכרות לעיל">אף אחת מהנזכרות לעיל</label>
+    </li>
+  </ul>
+  <br>
+  <button onclick="imcquestion()" type="button">הגש את תשובתך ולחץ על כפתר ה- NEXT שיופיע תכף</button>
   <p id="result" hidden></p>
   <input type="hidden" name="imc_scenario" id="imc_scenario"/>
+  <br>
+  <br>
+  <br>
+  <br>
   <script>
+      function hidenext()
+          {
+          document.querySelector('.otree-btn-next').hidden = true;
+          }
+
       function imcquestion()
         {
             var answer = document.getElementsByTagName('input');
-            for(i = 0; i < 6; i++)
+            for(i = 0; i < 9; i++)
             {
                 if(answer[i].type="radio")
                 {
@@ -44,6 +107,7 @@
             }
            document.getElementById("result").innerHTML= answers;
            document.getElementById("imc_scenario").value= answers;
+           document.querySelector('.otree-btn-next').hidden = false;
         }
   </script>
 </body>

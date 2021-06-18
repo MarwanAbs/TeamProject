@@ -2,6 +2,7 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 import random
+import numpy as np
 
 
 class Informedconsent(Page):
@@ -35,15 +36,17 @@ class ConditionB_largeDistance(Page):
 
 class Surveyloader(Page):
     timeout_seconds = 180
+    def vars_for_template(self):
+        self.player.condition
     def is_displayed(self):
-        self.player.condition = random.choice(Constants.levels)
         return True
 
     form_model = 'player'
     form_fields = ['Scenario_text1','Scenario_text2','Scenario_text3','Scenario_text4','Scenario_text5',
                    'Scenario_text6', 'like_rating1','like_rating2','like_rating3','like_rating4','like_rating5',
                    'like_rating6','RT1','RT2','RT3','RT4','RT5','RT6','conf_rating1','conf_rating2','conf_rating3',
-                   'conf_rating4','conf_rating5','conf_rating6']
+                   'conf_rating4','conf_rating5','conf_rating6','Scenario_num1','Scenario_num2','Scenario_num3',
+                   'Scenario_num4','Scenario_num5','Scenario_num6']
 
 
     def before_next_page(self):
