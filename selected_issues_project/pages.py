@@ -72,4 +72,4 @@ class Endpage(Page):
         return True
 
 page_sequence = [Informedconsent,Demographics,ConditionA_SmallDistance,ConditionB_largeDistance,
-                 Surveyloader,imc,Endpage]
+                 Surveyloader,imc,CaptchaPage,Endpage]
