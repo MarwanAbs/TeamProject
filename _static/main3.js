@@ -179,6 +179,7 @@ function nextQuest() {
         return;
     }
     ScenarioIndex++;
+    document.getElementById('index').innerHTML=ScenarioIndex+1;
     renderQuestion(Scenarios[ScenarioIndex]);
     Scenariotimestart = Date.now();
 }
@@ -196,6 +197,7 @@ function renderQuestion(quest) {
     // check if error msg is shown, if it is - hide it!
     var Error = document.querySelector('.error-msg');
     if (!Error.classList.contains('hide')) Error.classList.add('hide');
+    document.getElementById('index').innerHTML='תרחיש מספר ' + (ScenarioIndex+1) +'/6';
 
 }
 // remove the hide class from error message class to make it visable
